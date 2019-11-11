@@ -17,7 +17,7 @@
     <div id="myData"></div>
 
     <script>
-        fetch('https://my-json-server.typicode.com/haroldleo/haroldleo.github.io')
+        fetch('https://my-json-server.typicode.com/HaroldLeo/haroldleo.github.io/users')
             .then(function (response) {
                 return response.json();
             })
@@ -41,17 +41,16 @@
             var fname = document.getElementById('firstName').value;
             var lname = document.getElementById('lastName').value;
             const body = JSON.stringify({ 
-                id:5,
                 firstName: fname, 
                 lastName: lname });
             
-            fetch('/people.json', {
+            fetch('https://my-json-server.typicode.com/HaroldLeo/haroldleo.github.io/users', {
                 method: 'POST',
                 body: body
             })
             .then((res) => res.json())
             .then((data) =>  console.log(data))
-            .catch((err)=>console.log(err))
+            .catch((err)=> console.log(err))
         }
     </script>
 </body>
