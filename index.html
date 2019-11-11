@@ -2,18 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JSON Test</title>
 </head>
 
 <body>
-    <form name="form">
-        First name: <input type="text" name="firstName">
-        Last name: <input type="text" name="lastName">
+    <form id="form">
+        First name: <input type="text" id="firstName">
+        Last name: <input type="text" id="lastName">
         <input type="submit" value="Submit">
     </form>
+
     <div id="myData"></div>
+
     <script>
-        fetch('/people.json')
+        fetch('https://my-json-server.typicode.com/haroldleo/haroldleo.github.io')
             .then(function (response) {
                 return response.json();
             })
@@ -27,29 +31,27 @@
             var mainContainer = document.getElementById("myData");
             for (var i = 0; i < data.length; i++) {
                 var div = document.createElement("div");
-                div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+                div.innerHTML = 'Name: ' + data[i].firstName;
                 mainContainer.appendChild(div);
             }
         }
+
+        document.getElementById('form').addEventListener('submit', submit);
         function submit() {
-            var fname = document.forms["myForm"]["firstName"].value;
-            var lname = document.forms["myForm"]["lastName"].value;
+            var fname = document.getElementById('firstName').value;
+            var lname = document.getElementById('lastName').value;
             const body = JSON.stringify({ 
+                id:5,
                 firstName: fname, 
                 lastName: lname });
-            fetch('people.json', {
+            
+            fetch('/people.json', {
                 method: 'POST',
                 body: body
             })
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                appendData(data);
-            })
-            .catch(function (err) {
-                console.log('error: ' + err);
-            });
+            .then((res) => res.json())
+            .then((data) =>  console.log(data))
+            .catch((err)=>console.log(err))
         }
     </script>
 </body>
