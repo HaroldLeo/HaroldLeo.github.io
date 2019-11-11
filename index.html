@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JSON Test</title>
 </head>
+
 <body>
+    <form name="form">
+        First name: <input type="text" name="firstName">
+        Last name: <input type="text" name="lastName">
+        <input type="submit" value="Submit">
+    </form>
     <div id="myData"></div>
     <script>
-        fetch('people.json')
+        fetch('/people.json')
             .then(function (response) {
                 return response.json();
             })
@@ -26,6 +30,26 @@
                 div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
                 mainContainer.appendChild(div);
             }
+        }
+        function submit() {
+            var fname = document.forms["myForm"]["firstName"].value;
+            var lname = document.forms["myForm"]["lastName"].value;
+            const body = JSON.stringify({ 
+                firstName: fname, 
+                lastName: lname });
+            fetch('people.json', {
+                method: 'POST',
+                body: body
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
         }
     </script>
 </body>
