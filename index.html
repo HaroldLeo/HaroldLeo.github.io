@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JSON Test</title>
-</head>
+</head> -->
 
 <body>
     <form id="form">
@@ -14,10 +14,34 @@
         <input type="submit" value="Submit">
     </form>
 
+    <script>
+        document.getElementById('form').addEventListener('submit', submit);
+
+        function submit(event) {
+            event.preventDefault();
+
+            let fn = document.getElementById('firstName').value;
+            let ln = document.getElementById('lastName').value;
+            const userBody = JSON.stringify({ 
+            	firstName: fn, 
+            	lastName: ln })
+            console.log(userBody);
+            
+            fetch('http://localhost:3000/users/', {
+                method: 'POST',
+                headers : new Headers(),
+                body: userBody
+            })
+            .then(response => response.json())
+            .then(json => console.log(json))
+            .catch((err) => console.log(err))
+        }
+    </script>
+
     <div id="myData"></div>
 
     <script>
-        fetch('https://my-json-server.typicode.com/HaroldLeo/haroldleo.github.io/users')
+        fetch('http://localhost:3000/users')
             .then(function (response) {
                 return response.json();
             })
@@ -31,26 +55,9 @@
             var mainContainer = document.getElementById("myData");
             for (var i = 0; i < data.length; i++) {
                 var div = document.createElement("div");
-                div.innerHTML = 'Name: ' + data[i].firstName;
+                div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
                 mainContainer.appendChild(div);
             }
-        }
-
-        document.getElementById('form').addEventListener('submit', submit);
-        function submit() {
-            var fname = document.getElementById('firstName').value;
-            var lname = document.getElementById('lastName').value;
-            const body = JSON.stringify({ 
-                firstName: fname, 
-                lastName: lname });
-            
-            fetch('https://my-json-server.typicode.com/HaroldLeo/haroldleo.github.io/users', {
-                method: 'POST',
-                body: body
-            })
-            .then((res) => res.json())
-            .then((data) =>  console.log(data))
-            .catch((err)=> console.log(err))
         }
     </script>
 </body>
