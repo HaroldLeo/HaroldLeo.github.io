@@ -44,7 +44,7 @@ function makeBox() {
 	}, time);
 
 }
-document.onkeypress = function () {
+document.getElementById("box").onkeypress = function () {
 
 	clickedTime = Date.now();
 
