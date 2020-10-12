@@ -1,91 +1,88 @@
 <!doctype html>
 <html>
- <head>
- <title>Test your reactions</title>
 
- <meta charset="utf-8" />
- <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <title>Test your reactions</title>
 
- <style>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
- body {
- font-family:Verdana, Geneva, sans-serif;
+  <style>
+    body {
+      font-family: Verdana, Geneva, sans-serif;
 
- }
+    }
 
- 	 	 #box {
- 	 	 	 width:200px;
- 	 	 	 height:200px;
- 	 	 	 background-color:red;
- 	 	 	 display:none;
- 	 	 	 position:relative;
- 	 	 }
-     #head{
-       margin: auto;
-          width: 50%;
-          border: 3px solid black;
-          padding: 10px;
-       background-color:#3b5998;
-       color: white;
-       font-family: Vecta Bol;
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      display: none;
+      position: relative;
+    }
 
-     }
-     #inst{
-       margin: auto;
-          width: 50%;
-          padding: 10px;
-     }
-     #back{
-       margin: 0 auto;
-       width: 50%;
-       padding: 10px;
-       position:relative;
+    /* #head {
+      margin: auto;
+      width: 50%;
+      border: 3px solid black;
+      padding: 10px;
+      background-color: #3b5998;
+      color: white;
+      font-family: Vecta Bol;
 
+    } */
 
+    #inst {
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+    }
 
+    #back {
+      margin: 0 auto;
+      width: 50%;
+      padding: 10px;
+      position: relative;
+    }
 
-     }
+    .bold {
+      font-weight: bold;
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+    }
 
- 	 	 .bold {
- 	 	 	 font-weight:bold;
-       margin: auto;
-          width: 50%;
-          padding: 10px;
- 	 	 }
-
-     .wrapper {
-    text-align: center;
-}
-
-
-
- </style>
+    .wrapper {
+      text-align: center;
+    }
+  </style>
 
 
- </head>
+</head>
 
- <body>
+<body>
 
- <h1 id = "head">Test your reactions!</h1>
+  <h1 id="head">Test your reactions!</h1>
 
- <p id = "inst">Click on the boxes and circles as quickly as you can! and wait untill another appear.</p>
+  <p id="inst">Click on the boxes and circles as quickly as you can! and wait untill another appear.</p>
 
- <p class="bold">Your time: <span id="time">0</span>s</p>
-<div class = wrapper>
- <button id = "back" onclick="goBack()">Go Back</button>
-</div>
- <script>
- function goBack() {
-     window.history.back();
- }
- </script>
- <hr>
+  <p class="bold">Your time: <span id="time">0</span>s</p>
+  <div class=wrapper>
+    <button id="back" onclick="goBack()">Go Back</button>
+  </div>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+  <hr>
 
- <div id="box"></div>
+  <div id="box"></div>
 
 
- <script type="text/javascript" src="./code.js"></script>
+  <script type="text/javascript" src="./code.js"></script>
 
- </body>
+</body>
+
 </html>
