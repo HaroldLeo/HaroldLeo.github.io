@@ -18,6 +18,8 @@ function makeBox() {
 
 		document.getElementById("box").style.backgroundColor = getRandomColor();
 
+		document.getElementById("box").style.display="block";
+
 		createdTime = Date.now();
 
 	}, time);
