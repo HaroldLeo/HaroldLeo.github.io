@@ -16,35 +16,14 @@ function makeBox() {
 
 	setTimeout(function () {
 
-		if (Math.random() > 0.5) {
-			document.getElementById("box").style.borderRadius = "100px";
-		} else {
-			document.getElementById("box").style.borderRadius = "0";
-		}
-
-		var top = Math.random();
-
-		top = top * 300;
-
-		var left = Math.random();
-
-		left = left * 500;
-
-		document.getElementById("box").style.top = top + "px";
-
-		document.getElementById("box").style.left = left + "px";
-
-
 		document.getElementById("box").style.backgroundColor = getRandomColor();
-
-		document.getElementById("box").style.display = "block";
 
 		createdTime = Date.now();
 
 	}, time);
 
 }
-document.getElementById("box").onkeypress = function () {
+document.getElementById("box").onclick = function () {
 
 	clickedTime = Date.now();
 
