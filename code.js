@@ -30,7 +30,7 @@ document.getElementById("box").onclick = function () {
 
 	clickedTime = Date.now();
 
-	reactionTime = (clickedTime - createdTime) / 1000;
+	reactionTime = clickedTime - createdTime;
 
 	document.getElementById("time").innerHTML = reactionTime;
 
