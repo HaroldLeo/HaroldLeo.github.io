@@ -25,6 +25,7 @@ function makeBox() {
 	}, time);
 
 }
+
 document.getElementById("box").onclick = function () {
 
 	clickedTime = Date.now();
@@ -38,4 +39,6 @@ document.getElementById("box").onclick = function () {
 	makeBox();
 }
 
-makeBox();
+document.getElementById("start").onclick = function () {
+	makeBox();
+}

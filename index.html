@@ -18,7 +18,7 @@
       height: 200px;
       background-color: red;
       display: none;
-      position: relative;
+      position: center;
     }
 
     #head {
@@ -29,13 +29,7 @@
       margin: auto;
       width: 50%;
       padding: 10px;
-    }
-
-    #back {
-      margin: 0 auto;
-      width: 50%;
-      padding: 10px;
-      position: relative;
+      position:center;
     }
 
     .bold {
@@ -55,11 +49,11 @@
 
   <p id="inst">Click on the boxes and circles as quickly as you can! and wait untill another appear.</p>
 
+  <button id="start" onclick="goBack()">Go Back</button>
+
   <p class="bold">Your time: <span id="time">0</span>s</p>
-  <hr>
 
   <div id="box"></div>
-
 
   <script type="text/javascript" src="./code.js"></script>
 
