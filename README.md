@@ -1,1 +1,1 @@
-Inspired by: https://github.com/paharisakar/Test-your-reaction-time
+[cc](https://github.com/paharisakar/Test-your-reaction-time)
