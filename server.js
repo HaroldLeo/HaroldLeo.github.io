@@ -1,16 +1,8 @@
 var http = require('http');
-var fs = require("fs");
- 
-http.createServer(function(request, response) {
-    fs.readFile("index.html", function(err, data){
-        if(err){
-            response.writeHead(404);
-            response.write("Not Found!");
-         }
-         else{
-            response.writeHead(200, {'Content-Type': contentType});
-            response.write(data);
-         }
-         response.end();
-      });
+var fs = require('fs');
+var index = fs.readFileSync('index.html');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.end(index);
 }).listen(3000);
