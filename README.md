@@ -1,8 +1,6 @@
 # Latency Tester
 a basic version for showcasing
 
-[cc](https://github.com/paharisakar/Test-your-reaction-time)
-
 ## Tutorial
 
 If you are interested in making a simple website with **html and JavaScript** for your project, you can choose to host your website on GitHub pages, which is where this website is hosted now. It is free and easy to set up as long as **you have a GitHub account**. If your project includes some extensive backend then this is not applicable. 
@@ -47,3 +45,5 @@ If you are interested in making a simple website with **html and JavaScript** fo
     $ git push -u origin main
     ```
     And then you can check **https://*username*.github.io** out to see the changes. 
+
+    [cc](https://github.com/paharisakar/Test-your-reaction-time)
