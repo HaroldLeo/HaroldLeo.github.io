@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Test your reactions</title>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    body {
+      font-family: Verdana, Geneva, sans-serif;
+    }
+
+    #border {
+      width: 400px;
+      height: 400px;
+      border: 3px solid black;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      display: block;
+    }
+
+    #block {
+      width: 400px;
+      height: 400px;
+    }
+
+    #head {
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+      position: center;
+    }
+
+    #inst {
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+      position: center;
+    }
+
+    #description {
+      font-weight: bold;
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+    }
+
+    #start {
+      margin: auto;
+      width: 100%;  
+      height: 200px;   
+      text-align: center;
+      font-size: 25px;  
+    }
+
+  </style>
+
+
+</head>
+
+<body>
+
+  <h1 id="head">Latency Test</h1>
+
+  <p id="inst">Click "start" every time you want to test, and then click on the square as fast as possible once the color changed.</p>
+
+  <p id="description">Your time: <span id="time">0</span>ms</p>
+
+  <button id="start">Start</button>
+  
+  <div id="border"><div id="block"/></div>
+  
+  <script type="text/javascript" src="./code.js"></script>
+
+</body>
+
+</html>
