@@ -1,8 +1,11 @@
-var http = require('http');
-var fs = require('fs');
-var index = fs.readFileSync('index.html');
+const express = require('express');
+const app = express();
+const PORT = 8888;
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end(index);
-}).listen(3000);
+app.use(express.static('./'));
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
